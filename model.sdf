@@ -1,0 +1,141 @@
+<?xml version='1.0'?>
+<sdf version='1.4'>
+  <model name="my_robot">
+    <static>false</static>
+
+    <link name='chassis'>
+      <pose>0 0 .1 0 0 0</pose>
+
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size>.3 .1 .05</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>.3 .1 .05</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name='leg1'>
+      <pose>-0.10 -0.05 .1 0 0 0</pose>
+      
+      <collision name='caster_collision'>
+        <geometry>
+          <sphere>
+            <radius>.01</radius>
+          </sphere>
+        </geometry>
+
+        <surface>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+
+      <visual name='caster_visual'>
+        <geometry>
+          <sphere>
+            <radius>.01</radius>
+          </sphere>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name='leg_upper_1'>
+      <pose>-0.1 -0.09 .14 0.707 0 0</pose>
+      
+      <collision name='collision'>
+        <geometry>
+          <cylinder>
+            <radius>.005</radius>
+            <length>.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name='visual'>
+        <geometry>
+          <cylinder>
+            <radius>.005</radius>
+            <length>.1</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name='leg2'>
+      <pose>0 -0.05 .1 0 0 0</pose>
+      
+      <collision name='caster_collision'>
+        <geometry>
+          <sphere>
+            <radius>.01</radius>
+          </sphere>
+        </geometry>
+
+        <surface>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+
+      <visual name='caster_visual'>
+        <geometry>
+          <sphere>
+            <radius>.01</radius>
+          </sphere>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name='leg2'>
+      <pose>0.10 -0.05 .1 0 0 0</pose>
+      
+      <collision name='caster_collision'>
+        <geometry>
+          <sphere>
+            <radius>.01</radius>
+          </sphere>
+        </geometry>
+
+        <surface>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+
+      <visual name='caster_visual'>
+        <geometry>
+          <sphere>
+            <radius>.01</radius>
+          </sphere>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
