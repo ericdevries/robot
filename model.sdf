@@ -55,7 +55,7 @@
     </link>
 
     <link name='leg_upper_1'>
-      <pose>-0.1 -0.09 .14 0.707 0 0</pose>
+      <pose>-0.10 -0.094132 0.137130 0.8660254 0 0</pose>
       
       <collision name='collision'>
         <geometry>
@@ -75,6 +75,81 @@
         </geometry>
       </visual>
     </link>
+
+    <link name='leg_upper_ball_1'>
+      <pose>-0.10 -0.137859 0.174630 0.8660254 0 0</pose>
+      
+      <collision name='collision'>
+        <geometry>
+          <sphere>
+            <radius>.01</radius>
+          </sphere>
+        </geometry>
+      </collision>
+
+      <visual name='visual'>
+        <geometry>
+          <sphere>
+            <radius>.01</radius>
+          </sphere>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name='leg_lower_1'>
+      <pose>-0.10 -0.165473 0.072745 -0.25881905 0 0</pose>
+      <collision name='collision'>
+        <geometry>
+          <cylinder>
+            <radius>.005</radius>
+            <length>.2</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name='visual'>
+        <geometry>
+          <cylinder>
+            <radius>.005</radius>
+            <length>.2</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint type="revolute" name="leg1_hinge">
+      <child>leg1</child>
+      <parent>chassis</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint type="revolute" name="leg1_hinge_upper">
+      <pose>0 0 -0,05 0 0 0</pose>
+      <child>leg_upper_1</child>
+      <parent>leg1</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint type="revolute" name="leg1_hinge_leg">
+      <child>leg_upper_ball_1</child>
+      <parent>leg_upper_1</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint type="revolute" name="leg1_hinge_leg_lower">
+      <pose>0 0 0.1 0 0 0</pose>
+      <child>leg_lower_1</child>
+      <parent>leg_upper_ball_1</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
 
     <link name='leg2'>
       <pose>0 -0.05 .1 0 0 0</pose>
@@ -107,7 +182,104 @@
       </visual>
     </link>
 
-    <link name='leg2'>
+    <link name='leg_upper_2'>
+      <pose>0 -0.094132 0.137130 0.8660254 0 0</pose>
+      
+      <collision name='collision'>
+        <geometry>
+          <cylinder>
+            <radius>.005</radius>
+            <length>.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name='visual'>
+        <geometry>
+          <cylinder>
+            <radius>.005</radius>
+            <length>.1</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name='leg_upper_ball_2'>
+      <pose>0 -0.137859 0.174630 0.8660254 0 0</pose>
+      
+      <collision name='collision'>
+        <geometry>
+          <sphere>
+            <radius>.01</radius>
+          </sphere>
+        </geometry>
+      </collision>
+
+      <visual name='visual'>
+        <geometry>
+          <sphere>
+            <radius>.01</radius>
+          </sphere>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name='leg_lower_2'>
+      <pose>0 -0.165473 0.072745 -0.25881905 0 0</pose>
+      <collision name='collision'>
+        <geometry>
+          <cylinder>
+            <radius>.005</radius>
+            <length>.2</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name='visual'>
+        <geometry>
+          <cylinder>
+            <radius>.005</radius>
+            <length>.2</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint type="revolute" name="leg2_hinge">
+      <child>leg2</child>
+      <parent>chassis</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint type="revolute" name="leg2_hinge_upper">
+      <pose>0 0 -0,05 0 0 0</pose>
+      <child>leg_upper_2</child>
+      <parent>leg2</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint type="revolute" name="leg2_hinge_leg">
+      <child>leg_upper_ball_2</child>
+      <parent>leg_upper_2</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint type="revolute" name="leg2_hinge_leg_lower">
+      <pose>0 0 0.1 0 0 0</pose>
+      <child>leg_lower_2</child>
+      <parent>leg_upper_ball_2</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name='leg3'>
       <pose>0.10 -0.05 .1 0 0 0</pose>
       
       <collision name='caster_collision'>
@@ -137,5 +309,488 @@
         </geometry>
       </visual>
     </link>
+
+    <link name='leg_upper_3'>
+      <pose>0.10 -0.094132 0.137130 0.8660254 0 0</pose>
+      
+      <collision name='collision'>
+        <geometry>
+          <cylinder>
+            <radius>.005</radius>
+            <length>.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name='visual'>
+        <geometry>
+          <cylinder>
+            <radius>.005</radius>
+            <length>.1</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name='leg_upper_ball_3'>
+      <pose>0.10 -0.137859 0.174630 0.8660254 0 0</pose>
+      
+      <collision name='collision'>
+        <geometry>
+          <sphere>
+            <radius>.01</radius>
+          </sphere>
+        </geometry>
+      </collision>
+
+      <visual name='visual'>
+        <geometry>
+          <sphere>
+            <radius>.01</radius>
+          </sphere>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name='leg_lower_3'>
+      <pose>0.10 -0.165473 0.072745 -0.25881905 0 0</pose>
+      <collision name='collision'>
+        <geometry>
+          <cylinder>
+            <radius>.005</radius>
+            <length>.2</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name='visual'>
+        <geometry>
+          <cylinder>
+            <radius>.005</radius>
+            <length>.2</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint type="revolute" name="leg3_hinge">
+      <child>leg3</child>
+      <parent>chassis</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint type="revolute" name="leg3_hinge_upper">
+      <pose>0 0 -0,05 0 0 0</pose>
+      <child>leg_upper_3</child>
+      <parent>leg3</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint type="revolute" name="leg3_hinge_leg">
+      <child>leg_upper_ball_3</child>
+      <parent>leg_upper_3</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint type="revolute" name="leg3_hinge_leg_lower">
+      <pose>0 0 0.1 0 0 0</pose>
+      <child>leg_lower_3</child>
+      <parent>leg_upper_ball_3</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name='leg4'>
+      <pose>-0.10 0.05 .1 0 0 0</pose>
+      
+      <collision name='caster_collision'>
+        <geometry>
+          <sphere>
+            <radius>.01</radius>
+          </sphere>
+        </geometry>
+
+        <surface>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+
+      <visual name='caster_visual'>
+        <geometry>
+          <sphere>
+            <radius>.01</radius>
+          </sphere>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name='leg_upper_4'>
+      <pose>-0.10 0.094132 0.137130 -0.8660254 0 0</pose>
+      
+      <collision name='collision'>
+        <geometry>
+          <cylinder>
+            <radius>.005</radius>
+            <length>.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name='visual'>
+        <geometry>
+          <cylinder>
+            <radius>.005</radius>
+            <length>.1</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name='leg_upper_ball_4'>
+      <pose>-0.10 0.137859 0.174630 -0.8660254 0 0</pose>
+      
+      <collision name='collision'>
+        <geometry>
+          <sphere>
+            <radius>.01</radius>
+          </sphere>
+        </geometry>
+      </collision>
+
+      <visual name='visual'>
+        <geometry>
+          <sphere>
+            <radius>.01</radius>
+          </sphere>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name='leg_lower_4'>
+      <pose>-0.10 0.165473 0.072745 0.25881905 0 0</pose>
+      <collision name='collision'>
+        <geometry>
+          <cylinder>
+            <radius>.005</radius>
+            <length>.2</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name='visual'>
+        <geometry>
+          <cylinder>
+            <radius>.005</radius>
+            <length>.2</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint type="revolute" name="leg4_hinge">
+      <child>leg4</child>
+      <parent>chassis</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint type="revolute" name="leg4_hinge_upper">
+      <pose>0 0 -0,05 0 0 0</pose>
+      <child>leg_upper_4</child>
+      <parent>leg4</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint type="revolute" name="leg4_hinge_leg">
+      <child>leg_upper_ball_4</child>
+      <parent>leg_upper_4</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint type="revolute" name="leg4_hinge_leg_lower">
+      <pose>0 0 0.1 0 0 0</pose>
+      <child>leg_lower_4</child>
+      <parent>leg_upper_ball_4</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+
+    <link name='leg5'>
+      <pose>0 0.05 .1 0 0 0</pose>
+      
+      <collision name='caster_collision'>
+        <geometry>
+          <sphere>
+            <radius>.01</radius>
+          </sphere>
+        </geometry>
+
+        <surface>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+
+      <visual name='caster_visual'>
+        <geometry>
+          <sphere>
+            <radius>.01</radius>
+          </sphere>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name='leg_upper_5'>
+      <pose>0 0.094132 0.137130 -0.8660254 0 0</pose>
+      
+      <collision name='collision'>
+        <geometry>
+          <cylinder>
+            <radius>.005</radius>
+            <length>.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name='visual'>
+        <geometry>
+          <cylinder>
+            <radius>.005</radius>
+            <length>.1</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name='leg_upper_ball_5'>
+      <pose>0 0.137859 0.174630 -0.8660254 0 0</pose>
+      
+      <collision name='collision'>
+        <geometry>
+          <sphere>
+            <radius>.01</radius>
+          </sphere>
+        </geometry>
+      </collision>
+
+      <visual name='visual'>
+        <geometry>
+          <sphere>
+            <radius>.01</radius>
+          </sphere>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name='leg_lower_5'>
+      <pose>0 0.165473 0.072745 0.25881905 0 0</pose>
+      <collision name='collision'>
+        <geometry>
+          <cylinder>
+            <radius>.005</radius>
+            <length>.2</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name='visual'>
+        <geometry>
+          <cylinder>
+            <radius>.005</radius>
+            <length>.2</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint type="revolute" name="leg5_hinge">
+      <child>leg5</child>
+      <parent>chassis</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint type="revolute" name="leg5_hinge_upper">
+      <pose>0 0 -0,05 0 0 0</pose>
+      <child>leg_upper_5</child>
+      <parent>leg5</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint type="revolute" name="leg5_hinge_leg">
+      <child>leg_upper_ball_5</child>
+      <parent>leg_upper_5</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint type="revolute" name="leg5_hinge_leg_lower">
+      <pose>0 0 0.1 0 0 0</pose>
+      <child>leg_lower_5</child>
+      <parent>leg_upper_ball_5</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+
+    <link name='leg6'>
+      <pose>0.10 0.05 .1 0 0 0</pose>
+      
+      <collision name='caster_collision'>
+        <geometry>
+          <sphere>
+            <radius>.01</radius>
+          </sphere>
+        </geometry>
+
+        <surface>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+
+      <visual name='caster_visual'>
+        <geometry>
+          <sphere>
+            <radius>.01</radius>
+          </sphere>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name='leg_upper_6'>
+      <pose>0.10 0.094132 0.137130 -0.8660254 0 0</pose>
+      
+      <collision name='collision'>
+        <geometry>
+          <cylinder>
+            <radius>.005</radius>
+            <length>.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name='visual'>
+        <geometry>
+          <cylinder>
+            <radius>.005</radius>
+            <length>.1</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name='leg_upper_ball_6'>
+      <pose>0.10 0.137859 0.174630 -0.8660254 0 0</pose>
+      
+      <collision name='collision'>
+        <geometry>
+          <sphere>
+            <radius>.01</radius>
+          </sphere>
+        </geometry>
+      </collision>
+
+      <visual name='visual'>
+        <geometry>
+          <sphere>
+            <radius>.01</radius>
+          </sphere>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name='leg_lower_6'>
+      <pose>0.10 0.165473 0.072745 0.25881905 0 0</pose>
+      <collision name='collision'>
+        <geometry>
+          <cylinder>
+            <radius>.005</radius>
+            <length>.2</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name='visual'>
+        <geometry>
+          <cylinder>
+            <radius>.005</radius>
+            <length>.2</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint type="revolute" name="leg6_hinge">
+      <child>leg6</child>
+      <parent>chassis</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint type="revolute" name="leg6_hinge_upper">
+      <pose>0 0 -0,05 0 0 0</pose>
+      <child>leg_upper_6</child>
+      <parent>leg6</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint type="revolute" name="leg6_hinge_leg">
+      <child>leg_upper_ball_6</child>
+      <parent>leg_upper_6</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint type="revolute" name="leg6_hinge_leg_lower">
+      <pose>0 0 0.1 0 0 0</pose>
+      <child>leg_lower_6</child>
+      <parent>leg_upper_ball_6</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
   </model>
 </sdf>
